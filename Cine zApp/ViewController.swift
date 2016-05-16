@@ -176,7 +176,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 guard let data = data where error == nil else { return }
                 //print(response?.suggestedFilename ?? "")
                 
-                let image=UIImage(data: data)
+                _=UIImage(data: data)
                 
             }
         }
