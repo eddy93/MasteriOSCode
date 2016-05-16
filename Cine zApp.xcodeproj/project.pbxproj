@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6427B2031CD63A16008C9E82 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2011CD63A15008C9E82 /* Bolts.framework */; };
+		6427B2041CD63A16008C9E82 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2021CD63A16008C9E82 /* Parse.framework */; };
+		6427B2061CD63A28008C9E82 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2051CD63A28008C9E82 /* AudioToolbox.framework */; };
+		6427B2081CD63A3B008C9E82 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2071CD63A3B008C9E82 /* CFNetwork.framework */; };
+		6427B20A1CD63A44008C9E82 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2091CD63A44008C9E82 /* CoreGraphics.framework */; };
+		6427B20C1CD63A4D008C9E82 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B20B1CD63A4D008C9E82 /* CoreLocation.framework */; };
+		6427B20E1CD63A55008C9E82 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B20D1CD63A55008C9E82 /* QuartzCore.framework */; };
+		6427B2101CD63A5D008C9E82 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B20F1CD63A5D008C9E82 /* Security.framework */; };
+		6427B2121CD63A64008C9E82 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2111CD63A64008C9E82 /* StoreKit.framework */; };
+		6427B2141CD63A6A008C9E82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2131CD63A6A008C9E82 /* SystemConfiguration.framework */; };
+		6427B2161CD63A70008C9E82 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2151CD63A70008C9E82 /* libz.tbd */; };
+		6427B2181CD63A7A008C9E82 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2171CD63A7A008C9E82 /* libsqlite3.tbd */; };
+		642EDEA41CCB9197005EC58D /* AvailableMovies.png in Resources */ = {isa = PBXBuildFile; fileRef = 642EDEA21CCB9197005EC58D /* AvailableMovies.png */; };
+		642EDEA51CCB9197005EC58D /* ComingSoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 642EDEA31CCB9197005EC58D /* ComingSoon.png */; };
+		64614ABB1CDE04390021DF5E /* allegiant.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64614AB81CDE04390021DF5E /* allegiant.jpg */; };
+		64614ABC1CDE04390021DF5E /* BVS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64614AB91CDE04390021DF5E /* BVS.jpg */; };
+		64614ABD1CDE04390021DF5E /* deadpool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64614ABA1CDE04390021DF5E /* deadpool.jpg */; };
+		646452BF1CE0F1C800A196D8 /* hangover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646452BE1CE0F1C800A196D8 /* hangover.jpg */; };
 		64EBE84B1CC3BD91007C4210 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBE84A1CC3BD91007C4210 /* AppDelegate.swift */; };
 		64EBE84D1CC3BD91007C4210 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EBE84C1CC3BD91007C4210 /* ViewController.swift */; };
 		64EBE8501CC3BD91007C4210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64EBE84E1CC3BD91007C4210 /* Main.storyboard */; };
@@ -16,6 +34,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6427B2011CD63A15008C9E82 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		6427B2021CD63A16008C9E82 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		6427B2051CD63A28008C9E82 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6427B2071CD63A3B008C9E82 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6427B2091CD63A44008C9E82 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6427B20B1CD63A4D008C9E82 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6427B20D1CD63A55008C9E82 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6427B20F1CD63A5D008C9E82 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6427B2111CD63A64008C9E82 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6427B2131CD63A6A008C9E82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6427B2151CD63A70008C9E82 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		6427B2171CD63A7A008C9E82 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		642EDEA21CCB9197005EC58D /* AvailableMovies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AvailableMovies.png; sourceTree = "<group>"; };
+		642EDEA31CCB9197005EC58D /* ComingSoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ComingSoon.png; sourceTree = "<group>"; };
+		64614AB81CDE04390021DF5E /* allegiant.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = allegiant.jpg; path = ../allegiant.jpg; sourceTree = "<group>"; };
+		64614AB91CDE04390021DF5E /* BVS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = BVS.jpg; path = ../BVS.jpg; sourceTree = "<group>"; };
+		64614ABA1CDE04390021DF5E /* deadpool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = deadpool.jpg; path = ../deadpool.jpg; sourceTree = "<group>"; };
+		646452BE1CE0F1C800A196D8 /* hangover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hangover.jpg; sourceTree = "<group>"; };
 		64EBE8471CC3BD91007C4210 /* Cine zApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cine zApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64EBE84A1CC3BD91007C4210 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64EBE84C1CC3BD91007C4210 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +67,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6427B2181CD63A7A008C9E82 /* libsqlite3.tbd in Frameworks */,
+				6427B2161CD63A70008C9E82 /* libz.tbd in Frameworks */,
+				6427B2141CD63A6A008C9E82 /* SystemConfiguration.framework in Frameworks */,
+				6427B2121CD63A64008C9E82 /* StoreKit.framework in Frameworks */,
+				6427B2101CD63A5D008C9E82 /* Security.framework in Frameworks */,
+				6427B20E1CD63A55008C9E82 /* QuartzCore.framework in Frameworks */,
+				6427B20C1CD63A4D008C9E82 /* CoreLocation.framework in Frameworks */,
+				6427B20A1CD63A44008C9E82 /* CoreGraphics.framework in Frameworks */,
+				6427B2081CD63A3B008C9E82 /* CFNetwork.framework in Frameworks */,
+				6427B2061CD63A28008C9E82 /* AudioToolbox.framework in Frameworks */,
+				6427B2041CD63A16008C9E82 /* Parse.framework in Frameworks */,
+				6427B2031CD63A16008C9E82 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +88,18 @@
 		64EBE83E1CC3BD91007C4210 = {
 			isa = PBXGroup;
 			children = (
+				6427B2171CD63A7A008C9E82 /* libsqlite3.tbd */,
+				6427B2151CD63A70008C9E82 /* libz.tbd */,
+				6427B2131CD63A6A008C9E82 /* SystemConfiguration.framework */,
+				6427B2111CD63A64008C9E82 /* StoreKit.framework */,
+				6427B20F1CD63A5D008C9E82 /* Security.framework */,
+				6427B20D1CD63A55008C9E82 /* QuartzCore.framework */,
+				6427B20B1CD63A4D008C9E82 /* CoreLocation.framework */,
+				6427B2091CD63A44008C9E82 /* CoreGraphics.framework */,
+				6427B2071CD63A3B008C9E82 /* CFNetwork.framework */,
+				6427B2051CD63A28008C9E82 /* AudioToolbox.framework */,
+				6427B2011CD63A15008C9E82 /* Bolts.framework */,
+				6427B2021CD63A16008C9E82 /* Parse.framework */,
 				64EBE8491CC3BD91007C4210 /* Cine zApp */,
 				64EBE8481CC3BD91007C4210 /* Products */,
 			);
@@ -56,6 +116,12 @@
 		64EBE8491CC3BD91007C4210 /* Cine zApp */ = {
 			isa = PBXGroup;
 			children = (
+				642EDEA21CCB9197005EC58D /* AvailableMovies.png */,
+				642EDEA31CCB9197005EC58D /* ComingSoon.png */,
+				64614AB81CDE04390021DF5E /* allegiant.jpg */,
+				64614AB91CDE04390021DF5E /* BVS.jpg */,
+				64614ABA1CDE04390021DF5E /* deadpool.jpg */,
+				646452BE1CE0F1C800A196D8 /* hangover.jpg */,
 				64EBE84A1CC3BD91007C4210 /* AppDelegate.swift */,
 				64EBE84C1CC3BD91007C4210 /* ViewController.swift */,
 				64EBE84E1CC3BD91007C4210 /* Main.storyboard */,
@@ -126,7 +192,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				64EBE8581CC3BD91007C4210 /* LaunchScreen.storyboard in Resources */,
+				64614ABC1CDE04390021DF5E /* BVS.jpg in Resources */,
+				642EDEA41CCB9197005EC58D /* AvailableMovies.png in Resources */,
+				64614ABD1CDE04390021DF5E /* deadpool.jpg in Resources */,
 				64EBE8551CC3BD91007C4210 /* Assets.xcassets in Resources */,
+				646452BF1CE0F1C800A196D8 /* hangover.jpg in Resources */,
+				64614ABB1CDE04390021DF5E /* allegiant.jpg in Resources */,
+				642EDEA51CCB9197005EC58D /* ComingSoon.png in Resources */,
 				64EBE8501CC3BD91007C4210 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,22 +324,32 @@
 		64EBE85D1CC3BD91007C4210 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Cine zApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Edgard-Jammal.Cine-zApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		64EBE85E1CC3BD91007C4210 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Cine zApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Edgard-Jammal.Cine-zApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -290,6 +372,7 @@
 				64EBE85E1CC3BD91007C4210 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
