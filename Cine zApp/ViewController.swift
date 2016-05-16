@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import Bolts
 
+
 class ViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var availableMovies: UIButton!
@@ -29,7 +30,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 		// Timer to change the displayed image every 5 seconds by swiping to the right
 		_ = NSTimer.scheduledTimerWithTimeInterval(Constants.animationInterval, target: self, selector: #selector(swipeToTheRight), userInfo: nil, repeats: true)
-		getAllComingSoonMovies()
+		
+        parseServices().getAllComingSoonMovies()
 
 		scrollView.delegate = self
 
@@ -107,24 +109,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		}
 
 	}
-	/*
-	 This function is responsible for getting the coming soon movies
-	 */
-	func getAllComingSoonMovies() {
-		let query = PFQuery(className: "Movies")
-		query.whereKey("isComingSoon", equalTo: "Y")
-		query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) in
-			if (error != nil) {
-				self.presentAlertWithMessage(AlertMessages.fetchingMoviesErrorMessage)
-			}
-			else {
-				for object in objects! {
-					print(object)
-				}
-			}
-		}
-        getComingSoonMoviesPictures();
-	}
+
 	/*
 	 This function is responsible for displaying the alert message.
 	 Params: String message
@@ -143,49 +128,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		// Dispose of any resources that can be recreated.
 	}
     
-    func getComingSoonMoviesPictures(){
-        let url = NSURL(string: "https://www.omdbapi.com/?t=Where+Do+We+Go+Now%3F&y=&plot=short&r=json")
-        let request = NSURLRequest(URL: url!)
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: {(jsonData, response, error) in
-            do {
-                
-                let json : NSDictionary=try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSDictionary
-                
-                    if let movie = json["Poster"] {
-                        let nonsecure = movie as! String
-                        let secureImageURL=nonsecure.stringByReplacingOccurrencesOfString("http", withString: "https", options: NSStringCompareOptions.LiteralSearch, range: nil)
-                        self.downloadImage(NSURL(string: secureImageURL )!)
-                }
-            } catch {
-                print(error)
-            }
-         
-            
-        });
-        
-        
-        
-        task.resume();
-}
-    func downloadImage(url: NSURL){
-        getDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                //print(response?.suggestedFilename ?? "")
-                
-                _=UIImage(data: data)
-                
-            }
-        }
-    }
+
+
     
-    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
-            }.resume()
-    }
+ 
 }
 
