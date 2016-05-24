@@ -21,5 +21,21 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ViewController.appendDownloadedImageToImagesArray(NSNotification) -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "images.count == totalNumberOfImages">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.constructImagesArrayReadyForInfiniteLooping() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "images">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

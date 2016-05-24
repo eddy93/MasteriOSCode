@@ -23,12 +23,10 @@ class parseServices: NSObject {
                 
                 //self.presentAlertWithMessage(AlertMessages.fetchingMoviesErrorMessage)
             }
-            else {
-                for object in objects! {
-                    print (object)
-                    commonServices().downloadImage(NSURL(string:object.valueForKey("imageURL") as! String)!)
-                }
+            else{
+                NSNotificationCenter.defaultCenter().postNotificationName("comingSoonMoviesFetched", object: objects)
             }
+            
         }
         
     }
