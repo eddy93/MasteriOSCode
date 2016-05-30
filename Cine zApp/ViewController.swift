@@ -10,20 +10,21 @@ import UIKit
 import Parse
 import Bolts
 
-
 class ViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var availableMovies: UIButton!
 	@IBOutlet weak var soonInTheaters: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var blurryImage: UIImageView!
 	// images structure A B C A B
-	//var imageNames: [String] = ["deadpool.jpg", "BVS.jpg", "hangover.jpg", "deadpool.jpg", "BVS.jpg"]
-    var images: [UIImage] = [];
-    var totalNumberOfImages = 0;
+	// var imageNames: [String] = ["deadpool.jpg", "BVS.jpg", "hangover.jpg", "deadpool.jpg", "BVS.jpg"]
+	var images: [UIImage] = [];
+	var totalNumberOfImages = 0;
 	struct Constants {
 		static let animationInterval: NSTimeInterval = 5
 		static let animationDuration: NSTimeInterval = 1
-        static let csmFetched = "comingSoonMoviesFetched"
-        static let imageFetched = "movieImageFetched"
+		static let csmFetched = "comingSoonMoviesFetched"
+		static let imageFetched = "movieImageFetched"
 	}
 	struct AlertMessages {
 		static let connectionErrorMessage = "An error occured connecting to the Internet. Please check your connection."
@@ -34,13 +35,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 		// Timer to change the displayed image every 5 seconds by swiping to the right
 		_ = NSTimer.scheduledTimerWithTimeInterval(Constants.animationInterval, target: self, selector: #selector(swipeToTheRight), userInfo: nil, repeats: true)
-        //Notification Observers
-        //COMING SOON MOVIES FETCHED
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.requestImagesBasedOnUrls), name: Constants.csmFetched, object: nil)
-        //MOVIE IMAGE FETCHED
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.appendDownloadedImageToImagesArray), name: Constants.imageFetched, object: nil)
-		
-        parseServices().getAllComingSoonMovies()
+		// Notification Observers
+		// COMING SOON MOVIES FETCHED
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.requestImagesBasedOnUrls), name: Constants.csmFetched, object: nil)
+		// MOVIE IMAGE FETCHED
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.appendDownloadedImageToImagesArray), name: Constants.imageFetched, object: nil)
+
+		parseServices().getAllComingSoonMovies()
+        
+        movieDatabaseServices().getActorImage()
 
 		scrollView.delegate = self
 
@@ -50,45 +53,45 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	 because at this point the frame of the scrollview becomes fixed.
 	 */
 	override func viewDidLayoutSubviews() {
-		
+
 	}
-    /*
-     This function is responsible for filling csmImagesArray after that the image URLs are fetched
-     */
-    func requestImagesBasedOnUrls(notification: NSNotification) {
-        //fillTheScrollViewAndSetContentOffset()
-        let movies = notification.object as! [PFObject]
-        totalNumberOfImages = movies.count
-        for movie in movies{
-            commonServices().downloadImage(NSURL(string:movie.valueForKey("imageURL") as! String)!)
-        }
-    }
-    /*
-    This function is responsible for adding a newly downloaded image to the images array
-     */
-    func appendDownloadedImageToImagesArray(notification: NSNotification) {
-        let image = notification.object as! UIImage
-        images.append(image)
-        if(images.count == totalNumberOfImages){
-            constructImagesArrayReadyForInfiniteLooping()
-        }
-        
-        
-    }
-    /*
-     This function is responsible for structuring the images array in a way that allows infinite looping
-     */
-    func constructImagesArrayReadyForInfiniteLooping() {
-        images.append(images[0])
-        totalNumberOfImages += 1
-        images.append(images[1])
-        totalNumberOfImages += 1
-        fillTheScrollViewAndSetContentOffset()
-    }
+	/*
+	 This function is responsible for filling csmImagesArray after that the image URLs are fetched
+	 */
+	func requestImagesBasedOnUrls(notification: NSNotification) {
+		// fillTheScrollViewAndSetContentOffset()
+		let movies = notification.object as! [PFObject]
+		totalNumberOfImages = movies.count
+		for movie in movies {
+			commonServices().downloadImage(NSURL(string: movie.valueForKey("imageURL") as! String)!)
+		}
+	}
+	/*
+	 This function is responsible for adding a newly downloaded image to the images array
+	 */
+	func appendDownloadedImageToImagesArray(notification: NSNotification) {
+		let image = notification.object as! UIImage
+		images.append(image)
+		if (images.count == totalNumberOfImages) {
+			constructImagesArrayReadyForInfiniteLooping()
+		}
+
+	}
+	/*
+	 This function is responsible for structuring the images array in a way that allows infinite looping
+	 */
+	func constructImagesArrayReadyForInfiniteLooping() {
+		images.append(images[0])
+		totalNumberOfImages += 1
+		images.append(images[1])
+		totalNumberOfImages += 1
+		fillTheScrollViewAndSetContentOffset()
+        hideLoader()
+	}
 	/*
 	 This function is responsible for setting all the images that should show on the main page inside a scrollview and setting the scrollview's content offset
 	 */
-    func fillTheScrollViewAndSetContentOffset() -> () {
+	func fillTheScrollViewAndSetContentOffset() -> () {
 		// Set the content size equal to the image array's size
 		let width: CGFloat = self.view.frame.size.width * CGFloat(images.count)
 		scrollView.contentSize = CGSizeMake(width, scrollView.frame.size.height)
@@ -114,23 +117,31 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	 */
 	func swipeToTheRight() -> () {
 		// First always add the frame's size to the content offset. This is how to move to the next image
-		let contentOffset: CGPoint = CGPointMake(scrollView.contentOffset.x + scrollView.frame.size.width, 0)
+		var contentOffset: CGPoint = CGPointMake(scrollView.contentOffset.x + scrollView.frame.size.width, 0)
 		// The animation takes 1 second
-		UIView.animateWithDuration(Constants.animationDuration, animations: {
-			self.scrollView.contentOffset = contentOffset
-			},
-			// When the animation is complete (the image is switched) if it is the last image, go to the second
-			completion: {
-				(value: Bool) in
-				if (contentOffset.x == self.view.frame.size.width * CGFloat(self.totalNumberOfImages-1)) {
-					self.scrollView.contentOffset.x = self.view.frame.size.width * 1
+		if (contentOffset.x != scrollView.frame.size.width * CGFloat(self.totalNumberOfImages)) {
+			UIView.animateWithDuration(Constants.animationDuration, animations: {
+				self.scrollView.contentOffset = contentOffset
+				},
+				// When the animation is complete (the image is switched) if it is the last image, go to the second
+				completion: {
+					(value: Bool) in
+					if (contentOffset.x == self.view.frame.size.width * CGFloat(self.totalNumberOfImages - 1)) {
+						self.scrollView.contentOffset.x = self.view.frame.size.width * 1
+					}
+					else
+					if (contentOffset.x == self.view.frame.size.width * 0) {
+						self.scrollView.contentOffset.x = self.view.frame.size.width * CGFloat(self.totalNumberOfImages - 1)
+					}
 				}
-				else
-				if (contentOffset.x == self.view.frame.size.width * 0) {
-					self.scrollView.contentOffset.x = self.view.frame.size.width * CGFloat(self.totalNumberOfImages-1)
-				}
-			}
-		)
+			)
+		}
+        
+        else{
+            contentOffset.x = self.view.frame.width * 1;
+            scrollView.setContentOffset(contentOffset, animated: false)
+
+        }
 
 	}
 	/*
@@ -144,11 +155,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		}
 
 		else if (contentOffset.x == self.view.frame.size.width * 1) {
-			contentOffset.x = self.view.frame.size.width * CGFloat(self.totalNumberOfImages-2);
+			contentOffset.x = self.view.frame.size.width * CGFloat(self.totalNumberOfImages - 2);
 			scrollView.setContentOffset(contentOffset, animated: false)
 		}
 
 	}
+    
+    func hideLoader(){
+        blurryImage.hidden=true
+        activityIndicator.stopAnimating()
+    }
 
 	/*
 	 This function is responsible for displaying the alert message.
@@ -161,16 +177,11 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 		presentViewController(refreshAlert, animated: true, completion: nil)
 
-      
 	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-    
 
-
-    
- 
 }
 

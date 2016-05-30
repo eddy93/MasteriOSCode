@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.swipeToTheRight() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.frame.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "commonServices.(downloadImage(NSURL) -&gt; ()).(closure #1):commonServices.swift">
          <PersistentStrings>
             <PersistentString

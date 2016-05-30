@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -95,6 +95,12 @@
                                 <rect key="frame" x="7" y="20" width="593" height="491"/>
                                 <color key="backgroundColor" red="0.83921568629999999" green="0.74901960779999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurryImageForLoader.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6XZ-eL-G5d">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fW3-U7-G8o">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.83921568629999999" green="0.74901960779999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -107,14 +113,17 @@
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="86s-bz-Co6"/>
                             <constraint firstItem="Aky-ae-ia0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="9Qk-2A-rB2"/>
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Apw-G9-QaQ"/>
+                            <constraint firstItem="fW3-U7-G8o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bph-Vl-1tq"/>
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="top" secondItem="Aky-ae-ia0" secondAttribute="bottom" constant="14" id="C2p-gg-feQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y34-zJ-cIE" secondAttribute="trailing" constant="-20" id="C6L-gH-gOY"/>
                             <constraint firstItem="Y34-zJ-cIE" firstAttribute="top" secondItem="Yhg-4I-ZJ7" secondAttribute="bottom" id="Chg-sf-Csz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Um4-Qv-5jj" secondAttribute="bottom" id="EOv-Q9-h7q"/>
                             <constraint firstItem="Aky-ae-ia0" firstAttribute="top" secondItem="Yhg-4I-ZJ7" secondAttribute="bottom" constant="1" id="Esr-3l-Y80"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Um4-Qv-5jj" secondAttribute="trailing" constant="-20" id="FAq-X7-qNP"/>
+                            <constraint firstItem="6XZ-eL-G5d" firstAttribute="leading" secondItem="Yhg-4I-ZJ7" secondAttribute="leading" id="Iqm-zZ-uK4"/>
                             <constraint firstItem="Y34-zJ-cIE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="J0a-wq-SO8"/>
                             <constraint firstItem="Aky-ae-ia0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="K6f-k8-HyW"/>
+                            <constraint firstItem="6XZ-eL-G5d" firstAttribute="top" secondItem="Yhg-4I-ZJ7" secondAttribute="top" id="K7E-sr-fM2"/>
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="top" secondItem="Y34-zJ-cIE" secondAttribute="bottom" constant="1" id="KEk-kT-qoQ"/>
                             <constraint firstItem="Y34-zJ-cIE" firstAttribute="top" secondItem="Yhg-4I-ZJ7" secondAttribute="bottom" id="LXH-IV-qEa"/>
                             <constraint firstItem="Yhg-4I-ZJ7" firstAttribute="leading" secondItem="Y34-zJ-cIE" secondAttribute="leading" id="N35-aJ-UqE"/>
@@ -132,20 +141,33 @@
                             <constraint firstItem="Yhg-4I-ZJ7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eq3-ch-ItL"/>
                             <constraint firstItem="Yhg-4I-ZJ7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="fJG-vt-JJv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="atA-pI-cD6" secondAttribute="bottom" constant="4" id="ff8-Kh-e4O"/>
+                            <constraint firstItem="6XZ-eL-G5d" firstAttribute="trailing" secondItem="Yhg-4I-ZJ7" secondAttribute="trailing" id="hUX-Uc-kxv"/>
+                            <constraint firstItem="fW3-U7-G8o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mK0-eB-755"/>
                             <constraint firstItem="Aky-ae-ia0" firstAttribute="top" secondItem="Yhg-4I-ZJ7" secondAttribute="bottom" constant="1" id="o0c-sh-SaR"/>
                             <constraint firstItem="atA-pI-cD6" firstAttribute="top" secondItem="Y34-zJ-cIE" secondAttribute="bottom" constant="4" id="o1t-3S-3dJ"/>
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="top" secondItem="Aky-ae-ia0" secondAttribute="bottom" constant="14" id="sad-fq-BgW"/>
+                            <constraint firstItem="6XZ-eL-G5d" firstAttribute="bottom" secondItem="Yhg-4I-ZJ7" secondAttribute="bottom" id="utk-YC-hIM"/>
                             <constraint firstItem="atA-pI-cD6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-3" id="v7D-mI-CN3"/>
                             <constraint firstItem="Um4-Qv-5jj" firstAttribute="top" secondItem="Y34-zJ-cIE" secondAttribute="bottom" constant="1" id="vfB-K9-mDn"/>
                             <constraint firstItem="atA-pI-cD6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-3" id="w9R-2q-8Em"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6XZ-eL-G5d"/>
+                                <exclude reference="fW3-U7-G8o"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="Iqm-zZ-uK4"/>
+                                <exclude reference="K7E-sr-fM2"/>
+                                <exclude reference="hUX-Uc-kxv"/>
+                                <exclude reference="utk-YC-hIM"/>
                                 <exclude reference="3Bk-EO-QXW"/>
                                 <exclude reference="N35-aJ-UqE"/>
                                 <exclude reference="O7K-kp-juH"/>
                                 <exclude reference="eq3-ch-ItL"/>
                                 <exclude reference="fJG-vt-JJv"/>
+                                <exclude reference="Bph-Vl-1tq"/>
+                                <exclude reference="mK0-eB-755"/>
                                 <exclude reference="6ER-1I-BW2"/>
                                 <exclude reference="cgk-QQ-Dr5"/>
                                 <exclude reference="edW-6Y-b3b"/>
@@ -158,6 +180,20 @@
                                 <exclude reference="X3R-1Z-Asw"/>
                                 <exclude reference="o1t-3S-3dJ"/>
                                 <exclude reference="v7D-mI-CN3"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="6XZ-eL-G5d"/>
+                                <include reference="fW3-U7-G8o"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Iqm-zZ-uK4"/>
+                                <include reference="K7E-sr-fM2"/>
+                                <include reference="hUX-Uc-kxv"/>
+                                <include reference="utk-YC-hIM"/>
+                                <include reference="Bph-Vl-1tq"/>
+                                <include reference="mK0-eB-755"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -201,7 +237,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="fW3-U7-G8o" id="Gls-a8-I1s"/>
                         <outlet property="availableMovies" destination="Y34-zJ-cIE" id="aw2-45-4eY"/>
+                        <outlet property="blurryImage" destination="6XZ-eL-G5d" id="8Q9-ga-efi"/>
                         <outlet property="scrollView" destination="Yhg-4I-ZJ7" id="fdL-fR-t1c"/>
                         <outlet property="soonInTheaters" destination="Um4-Qv-5jj" id="tbR-6L-l2j"/>
                     </connections>
@@ -214,5 +252,6 @@
     <resources>
         <image name="AvailableMovies.png" width="90" height="96"/>
         <image name="ComingSoon.png" width="168" height="179"/>
+        <image name="blurryImageForLoader.jpg" width="640" height="1136"/>
     </resources>
 </document>
