@@ -24,7 +24,7 @@ class parseServices: NSObject {
                 //self.presentAlertWithMessage(AlertMessages.fetchingMoviesErrorMessage)
             }
             else{
-                NSNotificationCenter.defaultCenter().postNotificationName("comingSoonMoviesFetched", object: objects)
+                NSNotificationCenter.defaultCenter().postNotificationName(Common.Constants.csmFetched, object: objects)
             }
             
         }

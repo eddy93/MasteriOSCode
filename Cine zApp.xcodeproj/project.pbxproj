@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640E1B991D0480500091CE30 /* AvailableMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E1B981D0480500091CE30 /* AvailableMoviesViewController.swift */; };
+		640E1B9B1D05D6A10091CE30 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E1B9A1D05D6A10091CE30 /* Common.swift */; };
 		6427B2031CD63A16008C9E82 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2011CD63A15008C9E82 /* Bolts.framework */; };
 		6427B2041CD63A16008C9E82 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2021CD63A16008C9E82 /* Parse.framework */; };
 		6427B2061CD63A28008C9E82 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6427B2051CD63A28008C9E82 /* AudioToolbox.framework */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640E1B981D0480500091CE30 /* AvailableMoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableMoviesViewController.swift; sourceTree = "<group>"; };
+		640E1B9A1D05D6A10091CE30 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		6427B2011CD63A15008C9E82 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		6427B2021CD63A16008C9E82 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		6427B2051CD63A28008C9E82 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -139,6 +143,8 @@
 				64DF375F1CEA5B5E0007B6FF /* parseServices.swift */,
 				64EBE84A1CC3BD91007C4210 /* AppDelegate.swift */,
 				64EBE84C1CC3BD91007C4210 /* ViewController.swift */,
+				640E1B981D0480500091CE30 /* AvailableMoviesViewController.swift */,
+				640E1B9A1D05D6A10091CE30 /* Common.swift */,
 				64EBE84E1CC3BD91007C4210 /* Main.storyboard */,
 				64EBE8541CC3BD91007C4210 /* Assets.xcassets */,
 				64EBE8561CC3BD91007C4210 /* LaunchScreen.storyboard */,
@@ -227,8 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				649FC7AE1CF9C54500EBC362 /* movieDatabaseServices.swift in Sources */,
+				640E1B991D0480500091CE30 /* AvailableMoviesViewController.swift in Sources */,
 				64DF37601CEA5B5E0007B6FF /* parseServices.swift in Sources */,
 				64EBE8531CC3BD91007C4210 /* Cine_zApp.xcdatamodeld in Sources */,
+				640E1B9B1D05D6A10091CE30 /* Common.swift in Sources */,
 				64DF37621CEA5E700007B6FF /* commonServices.swift in Sources */,
 				64DF375E1CEA55E00007B6FF /* imdbServices.swift in Sources */,
 				64EBE84D1CC3BD91007C4210 /* ViewController.swift in Sources */,

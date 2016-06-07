@@ -21,7 +21,7 @@ class commonServices: NSObject {
                 
                 let image = UIImage(data: data)
                 
-                 NSNotificationCenter.defaultCenter().postNotificationName("movieImageFetched", object: image)
+                 NSNotificationCenter.defaultCenter().postNotificationName(Common.Constants.imageFetched, object: image)
                 
             }
         }

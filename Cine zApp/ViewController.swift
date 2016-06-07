@@ -14,18 +14,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var availableMovies: UIButton!
 	@IBOutlet weak var soonInTheaters: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var blurryImage: UIImageView!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var blurryImage: UIImageView!
 	// images structure A B C A B
 	// var imageNames: [String] = ["deadpool.jpg", "BVS.jpg", "hangover.jpg", "deadpool.jpg", "BVS.jpg"]
 	var images: [UIImage] = [];
 	var totalNumberOfImages = 0;
-	struct Constants {
-		static let animationInterval: NSTimeInterval = 5
-		static let animationDuration: NSTimeInterval = 1
-		static let csmFetched = "comingSoonMoviesFetched"
-		static let imageFetched = "movieImageFetched"
-	}
+
 	struct AlertMessages {
 		static let connectionErrorMessage = "An error occured connecting to the Internet. Please check your connection."
 		static let fetchingMoviesErrorMessage = "An error occured fetching the Coming Soon movies."
@@ -34,20 +29,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		super.viewDidLoad()
 
 		// Timer to change the displayed image every 5 seconds by swiping to the right
-		_ = NSTimer.scheduledTimerWithTimeInterval(Constants.animationInterval, target: self, selector: #selector(swipeToTheRight), userInfo: nil, repeats: true)
+		_ = NSTimer.scheduledTimerWithTimeInterval(Common.Constants.animationInterval, target: self, selector: #selector(swipeToTheRight), userInfo: nil, repeats: true)
 		// Notification Observers
 		// COMING SOON MOVIES FETCHED
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.requestImagesBasedOnUrls), name: Constants.csmFetched, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.requestImagesBasedOnUrls), name: Common.Constants.csmFetched, object: nil)
 		// MOVIE IMAGE FETCHED
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.appendDownloadedImageToImagesArray), name: Constants.imageFetched, object: nil)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.appendDownloadedImageToImagesArray), name: Common.Constants.imageFetched, object: nil)
+        
+        availableMovies.addTarget(self, action: #selector(navigateToAvailableMovies), forControlEvents: .TouchUpInside)
 
 		parseServices().getAllComingSoonMovies()
-        
-        movieDatabaseServices().getActorImage()
+
+		movieDatabaseServices().getActorImage()
 
 		scrollView.delegate = self
 
 	}
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = true
+    }
 	/*
 	 This function is responsible for detecting when the view layed out the subviews. We wait for this to happen to fill the scrollView and set its Content Offset
 	 because at this point the frame of the scrollview becomes fixed.
@@ -86,7 +86,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		images.append(images[1])
 		totalNumberOfImages += 1
 		fillTheScrollViewAndSetContentOffset()
-        hideLoader()
+		hideLoader()
 	}
 	/*
 	 This function is responsible for setting all the images that should show on the main page inside a scrollview and setting the scrollview's content offset
@@ -120,7 +120,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		var contentOffset: CGPoint = CGPointMake(scrollView.contentOffset.x + scrollView.frame.size.width, 0)
 		// The animation takes 1 second
 		if (contentOffset.x != scrollView.frame.size.width * CGFloat(self.totalNumberOfImages)) {
-			UIView.animateWithDuration(Constants.animationDuration, animations: {
+			UIView.animateWithDuration(Common.Constants.animationDuration, animations: {
 				self.scrollView.contentOffset = contentOffset
 				},
 				// When the animation is complete (the image is switched) if it is the last image, go to the second
@@ -136,12 +136,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 				}
 			)
 		}
-        
-        else{
-            contentOffset.x = self.view.frame.width * 1;
-            scrollView.setContentOffset(contentOffset, animated: false)
 
-        }
+		else {
+			contentOffset.x = self.view.frame.width * 1;
+			scrollView.setContentOffset(contentOffset, animated: false)
+
+		}
 
 	}
 	/*
@@ -160,11 +160,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		}
 
 	}
-    
-    func hideLoader(){
-        blurryImage.hidden=true
-        activityIndicator.stopAnimating()
-    }
+	/*
+	 This function is responsible for hiding the loader when the coming soon movie images are retrieved
+	 */
+	func hideLoader() {
+		blurryImage.hidden = true
+		activityIndicator.stopAnimating()
+	} /*
+	 This function is responsible for navigating to Available Movies view
+	 */
+	func navigateToAvailableMovies () {
+		let availableMoviesViewController = self.storyboard?.instantiateViewControllerWithIdentifier("AvailableMoviesViewController") as! AvailableMoviesViewController
+
+		navigationController!.pushViewController(availableMoviesViewController, animated: true)
+	}
 
 	/*
 	 This function is responsible for displaying the alert message.
