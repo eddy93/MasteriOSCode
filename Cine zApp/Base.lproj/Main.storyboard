@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FXM-P2-Bzg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FXM-P2-Bzg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -173,6 +173,8 @@
                                 <exclude reference="fW3-U7-G8o"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="07V-D2-MfP"/>
+                                <exclude reference="PlK-Sr-fO1"/>
                                 <exclude reference="Iqm-zZ-uK4"/>
                                 <exclude reference="K7E-sr-fM2"/>
                                 <exclude reference="hUX-Uc-kxv"/>
@@ -182,8 +184,6 @@
                                 <exclude reference="O7K-kp-juH"/>
                                 <exclude reference="eq3-ch-ItL"/>
                                 <exclude reference="fJG-vt-JJv"/>
-                                <exclude reference="07V-D2-MfP"/>
-                                <exclude reference="PlK-Sr-fO1"/>
                                 <exclude reference="6ER-1I-BW2"/>
                                 <exclude reference="cgk-QQ-Dr5"/>
                                 <exclude reference="edW-6Y-b3b"/>
@@ -204,12 +204,12 @@
                                 <include reference="fW3-U7-G8o"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="07V-D2-MfP"/>
+                                <include reference="PlK-Sr-fO1"/>
                                 <include reference="Iqm-zZ-uK4"/>
                                 <include reference="K7E-sr-fM2"/>
                                 <include reference="hUX-Uc-kxv"/>
                                 <include reference="utk-YC-hIM"/>
-                                <include reference="07V-D2-MfP"/>
-                                <include reference="PlK-Sr-fO1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -275,6 +275,7 @@
                         <viewControllerLayoutGuide type="bottom" id="z8C-ab-2vO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="23x-rX-Moy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uF0-7t-XLg">
@@ -327,13 +328,13 @@
                                 <exclude reference="aA0-z2-B1R"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="CWf-vq-RIg"/>
+                                <exclude reference="RjC-V8-qyc"/>
                                 <exclude reference="2aG-iF-uYA"/>
                                 <exclude reference="GWj-vx-Igi"/>
                                 <exclude reference="rJY-E1-rP1"/>
                                 <exclude reference="vfb-5U-wtK"/>
                                 <exclude reference="xqu-wr-ewl"/>
-                                <exclude reference="CWf-vq-RIg"/>
-                                <exclude reference="RjC-V8-qyc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -342,13 +343,13 @@
                                 <include reference="aA0-z2-B1R"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="CWf-vq-RIg"/>
+                                <include reference="RjC-V8-qyc"/>
                                 <include reference="2aG-iF-uYA"/>
                                 <include reference="GWj-vx-Igi"/>
                                 <include reference="rJY-E1-rP1"/>
                                 <include reference="vfb-5U-wtK"/>
                                 <include reference="xqu-wr-ewl"/>
-                                <include reference="CWf-vq-RIg"/>
-                                <include reference="RjC-V8-qyc"/>
                             </mask>
                         </variation>
                     </view>

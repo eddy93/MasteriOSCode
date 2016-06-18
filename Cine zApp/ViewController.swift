@@ -17,14 +17,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var blurryImage: UIImageView!
 	// images structure A B C A B
-	// var imageNames: [String] = ["deadpool.jpg", "BVS.jpg", "hangover.jpg", "deadpool.jpg", "BVS.jpg"]
 	var images: [UIImage] = [];
 	var totalNumberOfImages = 0;
 
-	struct AlertMessages {
-		static let connectionErrorMessage = "An error occured connecting to the Internet. Please check your connection."
-		static let fetchingMoviesErrorMessage = "An error occured fetching the Coming Soon movies."
-	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -35,10 +31,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.requestImagesBasedOnUrls), name: Common.Constants.csmFetched, object: nil)
 		// MOVIE IMAGE FETCHED
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.appendDownloadedImageToImagesArray), name: Common.Constants.imageFetched, object: nil)
+        // ERROR HANDLER
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.handleError), name: Common.Constants.mainViewControllerErr, object: nil)
         
         availableMovies.addTarget(self, action: #selector(navigateToAvailableMovies), forControlEvents: .TouchUpInside)
 
-		parseServices().getAllComingSoonMovies()
+		parseServices().getMovies("Y")
 
 		movieDatabaseServices().getActorImage()
 
@@ -174,23 +172,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 		navigationController!.pushViewController(availableMoviesViewController, animated: true)
 	}
-
+    /*
+     This function is responsible for any error handling.
+     Params: NSNotification notification
+     */
+    func handleError(notification: NSNotification) {
+        let error = notification.object as! Int
+        if(error == Common.ErrorCodes.fetchingCSMoviesErrorCode){
+            presentAlertWithMessage(Common.AlertMessages.fetchingCSMoviesErrorMessage)
+        }
+        if(error == Common.ErrorCodes.downloadingImagesErrorCode){
+            presentAlertWithMessage(Common.AlertMessages.downloadingImagesErrorMessage)
+           
+        }
+        
+         activityIndicator.stopAnimating()
+    }
 	/*
 	 This function is responsible for displaying the alert message.
 	 Params: String message
 	 */
-	func presentAlertWithMessage(message: String) {
-		let refreshAlert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    func presentAlertWithMessage(message: String) {
+		let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
 
-		refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+        alert.view.tintColor = Common.Constants.darkPurpleColor
 
-		presentViewController(refreshAlert, animated: true, completion: nil)
+		presentViewController(alert, animated: true, completion: nil)
 
 	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+    
 
 }
 

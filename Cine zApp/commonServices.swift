@@ -13,11 +13,14 @@ class commonServices: NSObject {
     /*
      This function is responsible for using the image downloaded asynchronously from the URL
      */
-    func downloadImage(url: NSURL) {
+    func downloadImage(url: NSURL){
         getDataFromUrl(url) { (data, response, error) in
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                // print(response?.suggestedFilename ?? "")
+                guard let data = data where error == nil else {
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(Common.Constants.mainViewControllerErr, object: Common.ErrorCodes.downloadingImagesErrorCode)
+                    
+                    return }
                 
                 let image = UIImage(data: data)
                 

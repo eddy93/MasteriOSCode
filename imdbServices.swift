@@ -36,5 +36,9 @@ class imdbServices: NSObject {
 
 		task.resume();
 	}
-    
+ 
+    func getOMDBMovie(title: String){
+        
+        
+    }
 }

@@ -13,18 +13,35 @@ import Bolts
 class parseServices: NSObject {
     
     /*
-     This function is responsible for getting the coming soon movies
+     This function is responsible for getting the movies
+     Param: String isComingSoon
      */
-    func getAllComingSoonMovies() {
+    func getMovies(isComingSoon: String) {
         let query = PFQuery(className: "Movies")
-        query.whereKey("isComingSoon", equalTo: "Y")
+        query.whereKey("isComingSoon", equalTo: isComingSoon)
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) in
             if (error != nil) {
-                
-                //self.presentAlertWithMessage(AlertMessages.fetchingMoviesErrorMessage)
+                var errorCode : Int
+                var view : String
+                if(isComingSoon=="Y"){
+                    errorCode = Common.ErrorCodes.fetchingCSMoviesErrorCode
+                    view = Common.Constants.mainViewControllerErr
+                }
+                else{
+                    errorCode = Common.ErrorCodes.fetchingAMoviesErrorCode
+                    view = Common.Constants.availableMoviesViewControllerErr
+                }
+                NSNotificationCenter.defaultCenter().postNotificationName(view, object: errorCode)
             }
             else{
-                NSNotificationCenter.defaultCenter().postNotificationName(Common.Constants.csmFetched, object: objects)
+                var fetchedMovies : String
+                if(isComingSoon=="Y"){
+                    fetchedMovies = Common.Constants.csmFetched
+                }
+                else{
+                    fetchedMovies = Common.Constants.amFetched
+                }
+                 NSNotificationCenter.defaultCenter().postNotificationName(fetchedMovies, object: objects)
             }
             
         }

@@ -28,6 +28,7 @@
 		64614ABC1CDE04390021DF5E /* BVS.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64614AB91CDE04390021DF5E /* BVS.jpg */; };
 		64614ABD1CDE04390021DF5E /* deadpool.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64614ABA1CDE04390021DF5E /* deadpool.jpg */; };
 		646452BF1CE0F1C800A196D8 /* hangover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646452BE1CE0F1C800A196D8 /* hangover.jpg */; };
+		647C92BE1D109ED30087933D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647C92BD1D109ED30087933D /* Movie.swift */; };
 		649FC7AE1CF9C54500EBC362 /* movieDatabaseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649FC7AD1CF9C54500EBC362 /* movieDatabaseServices.swift */; };
 		64DF375E1CEA55E00007B6FF /* imdbServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DF375D1CEA55E00007B6FF /* imdbServices.swift */; };
 		64DF37601CEA5B5E0007B6FF /* parseServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DF375F1CEA5B5E0007B6FF /* parseServices.swift */; };
@@ -62,6 +63,7 @@
 		64614AB91CDE04390021DF5E /* BVS.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = BVS.jpg; path = ../BVS.jpg; sourceTree = "<group>"; };
 		64614ABA1CDE04390021DF5E /* deadpool.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = deadpool.jpg; path = ../deadpool.jpg; sourceTree = "<group>"; };
 		646452BE1CE0F1C800A196D8 /* hangover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hangover.jpg; sourceTree = "<group>"; };
+		647C92BD1D109ED30087933D /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		649FC7AD1CF9C54500EBC362 /* movieDatabaseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = movieDatabaseServices.swift; sourceTree = "<group>"; };
 		64DF375D1CEA55E00007B6FF /* imdbServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = imdbServices.swift; path = ../imdbServices.swift; sourceTree = "<group>"; };
 		64DF375F1CEA5B5E0007B6FF /* parseServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseServices.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				64EBE84A1CC3BD91007C4210 /* AppDelegate.swift */,
 				64EBE84C1CC3BD91007C4210 /* ViewController.swift */,
 				640E1B981D0480500091CE30 /* AvailableMoviesViewController.swift */,
+				647C92BD1D109ED30087933D /* Movie.swift */,
 				640E1B9A1D05D6A10091CE30 /* Common.swift */,
 				64EBE84E1CC3BD91007C4210 /* Main.storyboard */,
 				64EBE8541CC3BD91007C4210 /* Assets.xcassets */,
@@ -236,6 +239,7 @@
 				640E1B991D0480500091CE30 /* AvailableMoviesViewController.swift in Sources */,
 				64DF37601CEA5B5E0007B6FF /* parseServices.swift in Sources */,
 				64EBE8531CC3BD91007C4210 /* Cine_zApp.xcdatamodeld in Sources */,
+				647C92BE1D109ED30087933D /* Movie.swift in Sources */,
 				640E1B9B1D05D6A10091CE30 /* Common.swift in Sources */,
 				64DF37621CEA5E700007B6FF /* commonServices.swift in Sources */,
 				64DF375E1CEA55E00007B6FF /* imdbServices.swift in Sources */,
