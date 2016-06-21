@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FXM-P2-Bzg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FXM-P2-Bzg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -281,46 +281,33 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uF0-7t-XLg">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="uF0-7t-XLg" secondAttribute="height" multiplier="12:5" id="RnX-ez-ZuB"/>
+                                    <constraint firstAttribute="width" secondItem="uF0-7t-XLg" secondAttribute="height" multiplier="12:5" id="Ebq-kw-uuS"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="RnX-ez-ZuB"/>
+                                        <exclude reference="Ebq-kw-uuS"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="RnX-ez-ZuB"/>
+                                        <include reference="Ebq-kw-uuS"/>
                                     </mask>
                                 </variation>
                             </scrollView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aA0-z2-B1R">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="522" id="RfH-DB-IHR"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="RfH-DB-IHR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="RfH-DB-IHR"/>
-                                    </mask>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uF0-7t-XLg" firstAttribute="leading" secondItem="aA0-z2-B1R" secondAttribute="leading" id="2aG-iF-uYA"/>
-                            <constraint firstItem="aA0-z2-B1R" firstAttribute="bottom" secondItem="z8C-ab-2vO" secondAttribute="top" id="CWf-vq-RIg"/>
-                            <constraint firstItem="uF0-7t-XLg" firstAttribute="trailing" secondItem="aA0-z2-B1R" secondAttribute="trailing" id="GWj-vx-Igi"/>
-                            <constraint firstItem="aA0-z2-B1R" firstAttribute="top" secondItem="uF0-7t-XLg" secondAttribute="bottom" id="RjC-V8-qyc"/>
-                            <constraint firstAttribute="trailing" secondItem="uF0-7t-XLg" secondAttribute="trailing" id="rJY-E1-rP1"/>
-                            <constraint firstItem="uF0-7t-XLg" firstAttribute="leading" secondItem="23x-rX-Moy" secondAttribute="leading" id="vfb-5U-wtK"/>
-                            <constraint firstItem="uF0-7t-XLg" firstAttribute="top" secondItem="i05-FB-DMs" secondAttribute="bottom" constant="8" symbolic="YES" id="xqu-wr-ewl"/>
+                            <constraint firstItem="aA0-z2-B1R" firstAttribute="top" secondItem="uF0-7t-XLg" secondAttribute="bottom" id="DK1-pd-0ae"/>
+                            <constraint firstAttribute="trailing" secondItem="uF0-7t-XLg" secondAttribute="trailing" id="I1k-mU-Vkc"/>
+                            <constraint firstItem="uF0-7t-XLg" firstAttribute="trailing" secondItem="aA0-z2-B1R" secondAttribute="trailing" id="UmI-KK-JgG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aA0-z2-B1R" secondAttribute="bottom" constant="-64" id="ZM8-Xx-AZe"/>
+                            <constraint firstItem="uF0-7t-XLg" firstAttribute="leading" secondItem="23x-rX-Moy" secondAttribute="leading" id="fJK-Av-E3o"/>
+                            <constraint firstItem="uF0-7t-XLg" firstAttribute="leading" secondItem="aA0-z2-B1R" secondAttribute="leading" id="fmC-ks-g2O"/>
+                            <constraint firstItem="uF0-7t-XLg" firstAttribute="top" secondItem="i05-FB-DMs" secondAttribute="bottom" constant="28" id="w9n-Gr-iyj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -328,13 +315,13 @@
                                 <exclude reference="aA0-z2-B1R"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="CWf-vq-RIg"/>
-                                <exclude reference="RjC-V8-qyc"/>
-                                <exclude reference="2aG-iF-uYA"/>
-                                <exclude reference="GWj-vx-Igi"/>
-                                <exclude reference="rJY-E1-rP1"/>
-                                <exclude reference="vfb-5U-wtK"/>
-                                <exclude reference="xqu-wr-ewl"/>
+                                <exclude reference="I1k-mU-Vkc"/>
+                                <exclude reference="UmI-KK-JgG"/>
+                                <exclude reference="fJK-Av-E3o"/>
+                                <exclude reference="fmC-ks-g2O"/>
+                                <exclude reference="w9n-Gr-iyj"/>
+                                <exclude reference="DK1-pd-0ae"/>
+                                <exclude reference="ZM8-Xx-AZe"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -343,17 +330,22 @@
                                 <include reference="aA0-z2-B1R"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="CWf-vq-RIg"/>
-                                <include reference="RjC-V8-qyc"/>
-                                <include reference="2aG-iF-uYA"/>
-                                <include reference="GWj-vx-Igi"/>
-                                <include reference="rJY-E1-rP1"/>
-                                <include reference="vfb-5U-wtK"/>
-                                <include reference="xqu-wr-ewl"/>
+                                <include reference="I1k-mU-Vkc"/>
+                                <include reference="UmI-KK-JgG"/>
+                                <include reference="fJK-Av-E3o"/>
+                                <include reference="fmC-ks-g2O"/>
+                                <include reference="w9n-Gr-iyj"/>
+                                <include reference="DK1-pd-0ae"/>
+                                <include reference="ZM8-Xx-AZe"/>
                             </mask>
                         </variation>
                     </view>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="scrollView" destination="uF0-7t-XLg" id="6rT-qy-a4V"/>
+                        <outlet property="tableView" destination="aA0-z2-B1R" id="Efg-Lh-4l6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Std-HJ-zMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

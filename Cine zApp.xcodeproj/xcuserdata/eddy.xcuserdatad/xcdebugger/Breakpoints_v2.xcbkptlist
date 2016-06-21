@@ -9,109 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cine zApp/commonServices.swift"
-            timestampString = "487622745.618933"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "downloadImage(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cine_zApp.commonServices.(downloadImage (__ObjC.NSURL) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Cine zApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eddy/Desktop/Messy%20Box/Les%20Docs/Cine%20zApp/Cine%20zApp/commonServices.swift"
-                  timestampString = "487620698.005379"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cine_zApp.commonServices.(downloadImage (__ObjC.NSURL) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Cine zApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eddy/Desktop/Messy%20Box/Les%20Docs/Cine%20zApp/Cine%20zApp/commonServices.swift"
-                  timestampString = "487620698.008615"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cine zApp/commonServices.swift"
-            timestampString = "487622791.997198"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "getDataFromUrl(_:completion:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cine_zApp.commonServices.getDataFromUrl (__ObjC.NSURL, completion : (data : Swift.Optional&lt;__ObjC.NSData&gt;, response : Swift.Optional&lt;__ObjC.NSURLResponse&gt;, error : Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Cine zApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eddy/Desktop/Messy%20Box/Les%20Docs/Cine%20zApp/Cine%20zApp/commonServices.swift"
-                  timestampString = "487624184.708061"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cine_zApp.commonServices.(getDataFromUrl (__ObjC.NSURL, completion : (data : Swift.Optional&lt;__ObjC.NSData&gt;, response : Swift.Optional&lt;__ObjC.NSURLResponse&gt;, error : Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "Cine zApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eddy/Desktop/Messy%20Box/Les%20Docs/Cine%20zApp/Cine%20zApp/commonServices.swift"
-                  timestampString = "487624184.708324"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Cine zApp/AvailableMoviesViewController.swift"
-            timestampString = "487627904.639195"
+            timestampString = "487944498.665351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "requestInfoBasedOnMovieName(_:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "addFetchedMovieToArray(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,44 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cine zApp/AvailableMoviesViewController.swift"
-            timestampString = "487627904.639195"
+            timestampString = "488066352.768425"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "requestInfoBasedOnMovieName(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cine zApp/parseServices.swift"
-            timestampString = "487626364.739916"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getMovies(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cine zApp/Movie.swift"
-            timestampString = "487631210.203859"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "init()"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

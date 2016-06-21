@@ -23,11 +23,13 @@ class imdbServices: NSObject {
 
 				let json: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments) as! NSDictionary
 
-				if let movie = json["Poster"] {
-					let nonsecure = movie as! String
-					let secureImageURL = nonsecure.stringByReplacingOccurrencesOfString("http", withString: "https", options: NSStringCompareOptions.LiteralSearch, range: nil)
-					commonServices().downloadImage(NSURL(string: secureImageURL)!)
-				}
+//				if let movie = json["Poster"] {
+//					let nonsecure = movie as! String
+//					let secureImageURL = nonsecure.stringByReplacingOccurrencesOfString("http", withString: "https", options: NSStringCompareOptions.LiteralSearch, range: nil)
+//					commonServices().downloadImage(NSURL(string: secureImageURL)!)
+//				}
+                
+                 NSNotificationCenter.defaultCenter().postNotificationName(Common.Constants.amDetailsFetched, object: json)
 			} catch {
 				print(error)
 			}
@@ -37,8 +39,5 @@ class imdbServices: NSObject {
 		task.resume();
 	}
  
-    func getOMDBMovie(title: String){
-        
-        
-    }
+    
 }

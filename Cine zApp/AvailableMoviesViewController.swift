@@ -10,23 +10,31 @@ import UIKit
 import Parse
 import Bolts
 
-class AvailableMoviesViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
+class AvailableMoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var moviesArray: [Movie] = [];
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.delegate=self
+        self.tableView.dataSource=self
         
         applyStyling()
         
         parseServices().getMovies("N")
         
         // Notification Observers
-        // COMING SOON MOVIES FETCHED
+        // AVAILABLE MOVIES TITLES FETCHED
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AvailableMoviesViewController.requestInfoBasedOnMovieName), name: Common.Constants.amFetched, object: nil)
+        // AVAILABLE MOVIE DETAILS FETCHED
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AvailableMoviesViewController.addFetchedMovieToArray), name: Common.Constants.amDetailsFetched, object: nil)
         // ERROR HANDLER
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AvailableMoviesViewController.handleError), name: Common.Constants.availableMoviesViewControllerErr, object: nil)
         
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         // Do any additional setup after loading the view.
     }
@@ -52,10 +60,30 @@ class AvailableMoviesViewController: UIViewController, UITabBarDelegate, UITable
      */
     func requestInfoBasedOnMovieName(notification: NSNotification){
         let movies = notification.object as! [PFObject]
-        imdbServices.getImdbMovie(<#T##imdbServices#>)
         for movie in movies{
-            var movieDictionary = [String:String] = ["poster":movie.objectForKey("poster")]
-            let movieObject = Movie(
+            let movieTitle : String = movie.valueForKey("title") as! String
+            let movieYear : String = (movie.valueForKey("year") as? String)!
+            let url : String = buildDownloadURLWithMovieTitle(movieTitle, movieYear: movieYear)
+            imdbServices().getImdbMovie(url)
+        }
+        
+    }
+    func buildDownloadURLWithMovieTitle (movieTitle: String, movieYear: String) -> String{
+       let plusSeparatedMovieTitle=movieTitle.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+       
+        if(movieYear != ""){
+            return "https://www.omdbapi.com/?t="+plusSeparatedMovieTitle+"&y="+movieYear+"&plot=full&r=json"
+        }
+        else{
+            return "https://www.omdbapi.com/?t="+plusSeparatedMovieTitle+"&plot=full&r=json"
+        }
+    }
+    func addFetchedMovieToArray(notification: NSNotification){
+       let movieDictionary = notification.object as! NSDictionary
+        let availableMovie = Movie(movieDictionary as! Dictionary<String, String>)
+        moviesArray.append(availableMovie)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
         }
         
     }
@@ -89,7 +117,18 @@ class AvailableMoviesViewController: UIViewController, UITabBarDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        
+        cell = UITableViewCell(style: UITableViewCellStyle.Subtitle,
+                                   reuseIdentifier: "cell")
+        
+        cell.textLabel?.text = self.moviesArray[indexPath.row].title
+        cell.detailTextLabel?.text = self.moviesArray[indexPath.row].genre
+        let label = UILabel(frame: CGRectMake((cell.layer.frame.width-50),5,40,20))
+        label.text = self.moviesArray[indexPath.row].imdbRating
+        cell.addSubview(label)
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

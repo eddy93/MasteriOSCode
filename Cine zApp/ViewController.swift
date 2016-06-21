@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
 		parseServices().getMovies("Y")
 
-		movieDatabaseServices().getActorImage()
+		//movieDatabaseServices().getActorImage()
 
 		scrollView.delegate = self
 
@@ -57,7 +57,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 	 This function is responsible for filling csmImagesArray after that the image URLs are fetched
 	 */
 	func requestImagesBasedOnUrls(notification: NSNotification) {
-		// fillTheScrollViewAndSetContentOffset()
 		let movies = notification.object as! [PFObject]
 		totalNumberOfImages = movies.count
 		for movie in movies {

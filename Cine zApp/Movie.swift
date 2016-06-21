@@ -10,14 +10,14 @@ import UIKit
 
 class Movie: NSObject {
  
-    var poster : UIImage = UIImage(named: "")!
+    var poster : String = ""
     var title :  String = ""
     var runtime : String = ""
     var genre : String = ""
     var plot: String = ""
     var rated : String = ""
     var director : String = ""
-    var actors : [String] = []
+    var actors : String = ""
     var metascore : String = ""
     var imdbRating : String = ""
     
@@ -25,29 +25,53 @@ class Movie: NSObject {
         
     }
     
-    convenience init(_ dictionary: Dictionary<String, AnyObject>) {
+    convenience init(_ dictionary: NSDictionary) {
         self.init()
-        poster = (dictionary["poster"] as? UIImage)!
-        title = (dictionary["title"] as? String)!
-        runtime = (dictionary["runtime"] as? String)!
-        genre = (dictionary["genre"] as? String)!
-        plot = (dictionary["plot"] as? String)!
-        rated = (dictionary["rated"] as? String)!
-        director = (dictionary["director"] as? String)!
-        actors = (dictionary["actors"] as? [String])!
-        metascore = (dictionary["metascore"] as? String)!
-        imdbRating = (dictionary["imdbRating"] as? String)!
+        poster = dictionary["Poster"] as! String
+        title = dictionary["Title"] as! String
+        runtime = dictionary["Runtime"] as! String
+        genre = dictionary["Genre"] as! String
+        plot = dictionary["Plot"] as! String
+        rated = dictionary["Rated"] as! String
+        director = dictionary["Director"] as! String
+        actors = dictionary["Actors"] as! String
+        metascore = dictionary["Metascore"] as! String
+        imdbRating = dictionary["imdbRating"] as! String
         
         
     }
-    
-    func getPoster() -> UIImage{
+    /* 
+     Getters
+     */
+    func getPoster() -> String{
         return poster;
     }
-    
     func getTitle() -> String{
         return title;
     }
-    
+    func getRuntime() -> String{
+        return runtime;
+    }
+    func getGenre() -> String{
+        return genre;
+    }
+    func getPlot() -> String{
+        return plot;
+    }
+    func getRated() -> String{
+        return rated;
+    }
+    func getDirector() -> String{
+        return director;
+    }
+    func getActors() -> String{
+        return actors;
+    }
+    func getMetascore() -> String{
+        return metascore;
+    }
+    func getImdbRating() -> String{
+        return imdbRating;
+    }
 
 }

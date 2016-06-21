@@ -17,6 +17,7 @@ class Common: NSObject {
         static let csmFetched = "comingSoonMoviesFetched"
         static let imageFetched = "movieImageFetched"
         static let amFetched = "availableMoviesFetched"
+        static let amDetailsFetched = "availableMovieDataFetched"
         //View with Error's name
         static let mainViewControllerErr = "mainViewControllerError"
         static let availableMoviesViewControllerErr = "availableMoviesViewControllerError"

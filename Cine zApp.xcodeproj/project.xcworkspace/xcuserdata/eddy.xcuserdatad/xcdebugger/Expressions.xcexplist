@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "Movie.init(NSDictionary) -&gt; Movie:Movie.swift">
+      </ContextState>
+      <ContextState
          contextName = "ViewController.swipeToTheRight() -&gt; ():ViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +13,14 @@
             </PersistentString>
             <PersistentString
                value = "scrollView.contentOffset.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AvailableMoviesViewController.tableView(UITableView, cellForRowAtIndexPath : NSIndexPath) -&gt; UITableViewCell:AvailableMoviesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.textLabel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,6 +41,25 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "imdbServices.(getImdbMovie(String) -&gt; ()).(closure #1):imdbServices.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;Title&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Movie.init([String : AnyObject]) -&gt; Movie:Movie.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary">
+            </PersistentString>
+            <PersistentString
+               value = "dictionary[&quot;poster&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "commonServices.(downloadImage(NSURL) -&gt; ()).(closure #1).(closure #1):commonServices.swift">
          <PersistentStrings>
             <PersistentString
@@ -38,10 +68,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "parseServices.(getMovies(String) -&gt; ()).(closure #1):parseServices.swift">
+         contextName = "AvailableMoviesViewController.addFetchedMovieToArray(NSNotification) -&gt; ():AvailableMoviesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "objects">
+               value = "availableMovie.getPlot()">
+            </PersistentString>
+            <PersistentString
+               value = "moviesArray">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

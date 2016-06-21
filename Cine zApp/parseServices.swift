@@ -34,14 +34,14 @@ class parseServices: NSObject {
                 NSNotificationCenter.defaultCenter().postNotificationName(view, object: errorCode)
             }
             else{
-                var fetchedMovies : String
+                var fetchedMoviesNotificationName : String
                 if(isComingSoon=="Y"){
-                    fetchedMovies = Common.Constants.csmFetched
+                    fetchedMoviesNotificationName = Common.Constants.csmFetched
                 }
                 else{
-                    fetchedMovies = Common.Constants.amFetched
+                    fetchedMoviesNotificationName = Common.Constants.amFetched
                 }
-                 NSNotificationCenter.defaultCenter().postNotificationName(fetchedMovies, object: objects)
+                 NSNotificationCenter.defaultCenter().postNotificationName(fetchedMoviesNotificationName, object: objects)
             }
             
         }
